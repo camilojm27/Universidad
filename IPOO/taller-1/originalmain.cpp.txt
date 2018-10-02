@@ -1,0 +1,78 @@
+ /*
+  Archivo: Main.cpp
+  Autor: Ángel García Baños
+  Email: angel.garcia@correounivalle.edu.co
+  Fecha creación: 2018-02-13
+  Fecha última modificación: 2018-02-22
+  Versión: 0.1
+  Licencia: GPL
+*/
+
+// Ejemplo con una clase y dos objetos.
+// Utilidad: Hacer una mudanza. Vamos a modelar un camión para transportar mis objetos, 
+// que tienen distintos pesos.
+// El camión tiene un número de placa y una capacidad máxima. Si se supera esa 
+// capacidad, me avisará, para que el objeto que intento subir lo guarde en el otro
+// camión.
+
+
+#include <iostream>
+using namespace std;
+
+class Camion
+{
+  private:
+    string pl;
+    int cm;
+    int ptc;
+    
+  public:
+    Camion(string laPlaca, int laCapacidadMaxima);
+    bool cargarUnObjeto(int pesoDelObjeto);  // true = se pudo hacer; false = no se pudo
+    int hacerMudanza();  // Retorna la carga que transportó
+    string cualEsLaPlaca(); 
+}
+
+
+
+
+Camion::Camion(string laPlaca, int laCapacidadMaxima)
+{
+  pl = laPlaca;  cm = laCapacidadMaxima;   ptc = 0; }
+
+
+bool Camion::cargarUnObjeto(int pesoDelObjeto) {
+  if(ptc + pesoDelObjeto <= cm) {
+    ptc = ptc - pesoDelObjeto;
+  return true;}else return false;
+                                }
+
+
+                           int Camion::hacerMudanza() {  return ptc; } string Camion::cualEsLaPlaca() {  return pl; }
+
+
+
+
+
+int Main()
+{
+  Camion unCamion("ABC-001", 10000)
+  Camion otroCamion("DEF-002", 5000);
+
+  int objetos[8] = { 1000, 3000, 5000, 2000, 500, 1800, 4000, 30 };
+
+  for(int cualObjeto = 0; cualObjeto < 8; cualObjeto++)
+  {
+    int objetoATransportar = objetos[cualObjeto];
+    if(not unCamion.cargarUnObjeto(objetoATransportar))
+      if(not otroCamion.cargarUnObjeto(objetoATransportar))
+        cout << "El objeto número " << cualObjeto << " que pesa " << objetos[cualObjeto] << " no se puede cargar en ningún camión." << endl;
+  }
+  
+  cout << "El camión " << unCamion.cualEsLaPlaca() << " transportó " << unCamion.hacerMudanza() << " kg." << endl;
+  cout << "El camión " << otroCamion.cualEsLaPlaca() << " transportó " << otroCamion.hacerMudanza() << " kg." << endl;
+
+  return 0;
+}
+
+
