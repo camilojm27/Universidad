@@ -1,0 +1,45 @@
+(Espero pasar esta notas a formato mark down en el futuro)
+Module 2 - Header Files:
+Cuando incluimos     #pragma once  ingresamos una directiva de preprocesador por la cual le decimos al compilador que solo incluya el archivo .h una sola vez
+This sample code will provide a starter for you by demonstrating the use of header and implementation files for a class called Math with a function for calculating the value of a base raised to an exponent.  We'll call this function pow.
+
+Math.h
+
+    // Math.h
+    // Header file for the Math class
+
+    #pragma once
+
+    // Math class definition
+    static class Math
+    {
+        public:
+
+        // given base and exponent, calculate value
+        static int Math::pow(int base, int exp);
+
+    };
+    
+   La clase Math es una clase de tipo estatica porque no tenemos instancias la clase para poder utilizarla 
+    For example, if Math were not static, before we could use it in our program, we would need to create an instance of it as shown here:
+
+    Math math = new Math();
+    math.pow(2, 8);
+    
+    /*Para la clase de Matemáticas que estamos creando en este curso, la consideraremos como una clase de utilidad y, por lo tanto, 
+    queremos que sea estática, por lo que no tenemos que crear una instancia cada vez que queramos usar la funcionalidad en esa clase.
+
+A continuación, nuestra definición de clase continúa con la llave de apertura y luego la palabra clave público: 
+cualquier cosa después del público: la palabra clave se considera de visibilidad pública. Es decir,
+se puede llamar directamente desde otras clases.
+
+Después del público: declaramos nuestra función para generar el poder de una base elevada a un exponente. 
+Tenga en cuenta que este método también está utilizando la designación estática.
+Para poder llamar a la función desde una clase estática, la función también debe ser estática.
+
+Tenga en cuenta que la función no contiene detalles de implementación sin embargo.
+Simplemente indicamos los tipos de datos de los parámetros que esperamos utilizar con esta función. 
+De hecho, ni siquiera tenemos que usar nombres de parámetros en esta declaración, 
+simplemente usando static int Math :: pow (int, int); es suficiente ya que solo necesitamos indicar los tipos de datos que espera la función.
+
+La última pieza clave que se debe tener en cuenta sobre esta declaración de la clase de Matemáticas es que la terminamos con un punto y coma después de la llave de cierre. La mayoría de los programadores nuevos tienen una tendencia a olvidar esto. Microsoft Visual Studio agrega automáticamente el punto y coma y muchos IDE más recientes también pueden hacer lo mismo.*/
