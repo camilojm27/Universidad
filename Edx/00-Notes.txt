@@ -1,5 +1,5 @@
 (Espero pasar esta notas a formato mark down en el futuro)
-Module 2 - Header Files:
+Modulo 2 - Header Files:
 Cuando incluimos     #pragma once  ingresamos una directiva de preprocesador por la cual le decimos al compilador que solo incluya el archivo .h una sola vez
 This sample code will provide a starter for you by demonstrating the use of header and implementation files for a class called Math with a function for calculating the value of a base raised to an exponent.  We'll call this function pow.
 
@@ -43,3 +43,97 @@ De hecho, ni siquiera tenemos que usar nombres de parámetros en esta declaraci�
 simplemente usando static int Math :: pow (int, int); es suficiente ya que solo necesitamos indicar los tipos de datos que espera la función.
 
 La última pieza clave que se debe tener en cuenta sobre esta declaración de la clase de Matemáticas es que la terminamos con un punto y coma después de la llave de cierre. La mayoría de los programadores nuevos tienen una tendencia a olvidar esto. Microsoft Visual Studio agrega automáticamente el punto y coma y muchos IDE más recientes también pueden hacer lo mismo.*/
+
+---------------------------------------------------------------------------------------------------------------------------------------
+Modulo 2 - Class Constructors
+
+En realidad, existen dos razones más, igualmente importantes, para definir un constructor predeterminado en sus clases. En primer lugar, los tipos compuestos (matrices o punteros) que pueden definirse dentro de un bloque de código, pueden tener valores indefinidos cuando se inicializan a sus valores predeterminados. Debe asegurarse de que estos miembros se inicialicen correctamente creando su propio constructor predeterminado y realizando la inicialización usted mismo.
+
+La segunda razón es un poco más compleja y surge cuando su clase contiene un miembro que es una clase en sí misma. El constructor predeterminado del compilador no puede inicializar ese miembro.
+
+El siguiente ejemplo de código muestra el uso de tres constructores diferentes, un constructor predeterminado, uno que acepta dos argumentos y otro que acepta tres argumentos.Y el destructor
+**Person.h**
+
+    #pragma once
+    
+    #include <string>
+    
+    class Person
+    {
+    
+    private:
+        std::string firstName;
+        std::string lastName;
+    
+        int age;
+    
+    public:
+        Person();
+    
+        Person(std::string fName, std::string lName);
+    
+        Person(std::string fName, std::string lName, int age);
+    
+        ~Person();
+
+        void SayHello();
+    };
+
+**Person.cpp**
+
+
+    #include "stdafx.h"
+    #include "Person.h"
+    #include <iostream>
+    
+    Person::Person()
+    {
+    
+    }
+    
+    Person::Person(std::string fName, std::string lName)
+    {
+        this -> firstName = fName;
+        this -> lastName = lName;
+    }
+    
+    Person::Person(std::string fName, std::string lName, int age)
+    {
+        this -> firstName = fName;
+        this -> lastName = lName;
+    
+        this -> age = age;
+    }
+    
+    
+    Person::~Person()
+    {
+    }
+    
+    El primer constructor es el constructor por defecto. No tiene parámetros y debido a que no hemos inicializado nuestras variables miembro privadas, este constructor lo hará con los valores predeterminados para los tipos de datos de esas variables miembro.
+
+El segundo constructor toma dos argumentos y los usa para inicializar la primera y última variables miembro de nombre en la clase. Aquí es donde debe hacer una pequeña investigación sobre el compilador que está utilizando para determinar cómo se inicializará la variable de edad. La razón es que, debido a que no inicializamos la edad en la clase cuando la declaramos y porque este constructor tampoco la inicializa, si intenta usar la variable age en una instancia de Person, ¿qué resultado obtendrá? El constructor predeterminado inicializará la edad a un valor predeterminado (dependiente del compilador), pero si llama al segundo constructor, la edad puede o no iniciarse.
+
+El constructor final toma tres argumentos para inicializar las tres variables miembro. Cuando creas una nueva instancia de la clase Person, puedes elegir cualquiera de estos constructores y el compilador sabrá cuál usar en función del número de argumentos que pases como se muestra en este ejemplo de código.
+
+#include "stdafx.h"
+    #include <iostream>
+    #include "Person.h"
+    
+    using namespace std;
+    
+    int main()
+    {
+    
+        // create a Person instance using default constructor
+        Person *pOne = new Person();
+        
+        // Create a Person instance using 2 argument constructor
+        Person *pTwo = new Person("Tom", "Thumb");
+    
+        // Create a Person instance using 3 argument constructor
+        Person *pThree = new Person("Tom", "Thumb", 15);
+    
+    return 0;
+    }
+
