@@ -1,4 +1,6 @@
-.o
-.mp4
-./vscode
+*.o
+*.mp4
+.vscode/
 .directory
+Tabulado\ 2018-II-Adiciones.pdf 
+Tabulado\ 2018-II.pdf
