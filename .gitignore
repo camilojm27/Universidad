@@ -1,6 +1,15 @@
 *.o
 *.mp4
-.vscode/
 .directory
 Tabulado\ 2018-II-Adiciones.pdf 
 Tabulado\ 2018-II.pdf
+
+# Visual Studio and Visul Studio Code (Files) 
+*.vcxproj
+*.sln
+*.filters
+*.user
+*.json
+#-----------VS-Folders--------------
+.vs*
+debug*

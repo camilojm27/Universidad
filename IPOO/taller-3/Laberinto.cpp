@@ -23,7 +23,7 @@ Laberinto::Laberinto(int numeroFilas, int numeroColumnas, int numeroTesoros, int
   {
     tablero[fila] = new int[numeroColumnas];
     for(int columna=0; columna<numeroColumnas; columna++)
-      tablero[fila][columna] = 1;  // Llena todo el laberinto con paredes
+      tablero[fila][columna] = 0;  // Llena todo el laberinto con paredes
   }
   casillasVacias = 0;
 
@@ -31,6 +31,7 @@ Laberinto::Laberinto(int numeroFilas, int numeroColumnas, int numeroTesoros, int
   tablero[filaEntrada][0] = 5;  // Pone la entrada
   filaSalida = rand() % numeroFilas;
   tablero[filaSalida][numeroColumnas-1] = 6;  // Pone la salida
+  cout << "filaEntrada = " << filaEntrada <<" "<< "filaSalida = " <<filaSalida<< endl;
 }
 
 
@@ -62,9 +63,29 @@ void Laberinto::fabricarCamino()
 int Laberinto::trazaLineaRecta(int filaInicial, int columnaInicial, int filaFinal, int columnaFinal)
 {
   int contarVacias = 0;
+ 
+  this->filaEntrada = filaInicial ; //X1
+  this->filaSalida= filaFinal;      //X2
+  columnaInicial = 0;               //Y1
+  columnaFinal = numeroColumnas-1;  //Y2
 
-  // Taller 3
-    
+   int  yTotal, xTotal;
+   double pendiente;
+
+  /* pendiente = (y2 - y1)/ (x2 - x1)*/
+   yTotal = (columnaFinal - columnaInicial);
+   xTotal = (filaSalida - filaEntrada);
+   pendiente = (yTotal/xTotal);
+
+/* y-y1 = m(x - x1)
+   y = mx - mx1 (-y1*-1) si es mayor de 0 se suma sino se resta
+   y = mx - mx1 + y1  el mal multiplicarse por x1 x1 cambia su valor(double)
+
+   y = mx - x1 esa es la formula, de la forma y = mx + b 
+
+-------------------------
+  y = mx + b
+*/
   return contarVacias;
 }
 
