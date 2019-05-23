@@ -1,0 +1,26 @@
+#ifndef HH_User
+#define HH_User
+
+#include<cstdlib>
+#include<cmath>
+#include<iostream>
+#include<curses.h>
+#include "../Laberinto.h"
+using namespace std;
+
+class User
+{
+    private:
+        Laberinto *laberinto:
+        int tesorosDelUsuario;
+        int posicionDelUsuarioX;
+        int posicionDelUsuarioY;
+        
+    public:
+        User(Laberinto *laberinto);
+        void sumarTesoro();
+        bool estoyEnLaSalida();
+        void situarJugador();
+        
+};
+#endif

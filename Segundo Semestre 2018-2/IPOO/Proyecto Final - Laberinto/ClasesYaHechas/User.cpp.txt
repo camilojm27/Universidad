@@ -1,0 +1,13 @@
+#include "User.h"
+#include "../Laberinto.h"
+
+User::User()
+{
+    this-> tesorosDelUsuario = 0;
+    this-> posicionDelUsuario= &tablero[filaEntrada][1] = 8;
+}
+
+void User::situarJugador()
+{
+    &tablero[filaEntrada][1] = 8;
+}
