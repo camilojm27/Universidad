@@ -1,3 +1,5 @@
+*.gitignore
+*.class
 *.o
 *.mp4
 .directory
@@ -13,3 +15,10 @@ Tabulado\ 2018-II.pdf
 #-----------VS-Folders--------------
 .vs*
 debug*
+#----------Eclipse Folders-------------
+.metadate
+.settings
+#----------Eclipse Files---------------
+*.classpath
+*.project
+
