@@ -1,9 +1,9 @@
-package assignament_1 ;
+package mrcraps;
 
 import java.util.Random;
 import java.util.Scanner;
 
-public class Craps {
+public class MrCraps {
 
 	public static void main(String[] args) {
 		Scanner scanercito = new Scanner(System.in);
@@ -14,7 +14,7 @@ public class Craps {
 
 		boolean win = false;
 		while (!win) {
-			
+
 			int dado = randi.nextInt(10) + 2;
 
 			switch (dado) {
@@ -36,82 +36,81 @@ public class Craps {
 				break;
 
 			default:
-				
+
 				int punto = dado;
 				boolean hasDone = false;
-				
-				while(!hasDone){
-				dado = randi.nextInt(10) + 2;
-				System.out.println("Sacaste un " + dado);
-				int auxPunto = dado;
-				if(dado == 7){
-					hasDone = true;
-					win = true;
-					System.out.println("You Lose");
-					break;
-				} else {
-					System.out.println("Oprima una tecla para lanzar");
-					String respuesta = scanercito.nextLine();
-					
-					switch(dado){
-					
-					case 4:
-						if(punto == dado);
+
+				while (!hasDone) {
+					dado = randi.nextInt(10) + 2;
+					System.out.println("Sacaste un " + dado);
+					int auxPunto = dado;
+					if (dado == 7) {
 						hasDone = true;
 						win = true;
-						System.out.println("Sacaste un " + dado);
-						System.out.println("You win");
+						System.out.println("You Lose");
 						break;
-					case 5:
-						if(punto == dado);
-						hasDone = true;
-						win = true;
-						System.out.println("Sacaste un " + dado);
-						System.out.println("You win");
-						break;
-					case 6:
-						if(punto == dado);
-						hasDone = true;
-						win = true;
-						System.out.println("Sacaste un " + dado);
-						System.out.println("You win");
-						break;
-					case 8:
-						if(punto == dado);
-						hasDone = true;
-						win = true;
-						System.out.println("Sacaste un " + dado);
-						System.out.println("You win");
-						break;
-					case 9:
-						if(punto == dado);
-						hasDone = true;
-						win = true;
-						System.out.println("Sacaste un " + dado);
-						System.out.println("You win");
-						break;
-					case 10:
-						if(punto == dado);
-						hasDone = true;
-						win = true;
-						System.out.println("Sacaste un " + dado);
-						System.out.println("You win");
-						break;
-						
+					} else {
+						System.out.println("Oprima una tecla para lanzar");
+						String respuesta = scanercito.nextLine();
+
+						switch (dado) {
+
+						case 4:
+							if (punto == dado)
+								;
+							hasDone = true;
+							win = true;
+							System.out.println("Sacaste un " + dado);
+							System.out.println("You win");
+							break;
+						case 5:
+							if (punto == dado)
+								;
+							hasDone = true;
+							win = true;
+							System.out.println("Sacaste un " + dado);
+							System.out.println("You win");
+							break;
+						case 6:
+							if (punto == dado)
+								;
+							hasDone = true;
+							win = true;
+							System.out.println("Sacaste un " + dado);
+							System.out.println("You win");
+							break;
+						case 8:
+							if (punto == dado)
+								;
+							hasDone = true;
+							win = true;
+							System.out.println("Sacaste un " + dado);
+							System.out.println("You win");
+							break;
+						case 9:
+							if (punto == dado)
+								;
+							hasDone = true;
+							win = true;
+							System.out.println("Sacaste un " + dado);
+							System.out.println("You win");
+							break;
+						case 10:
+							if (punto == dado)
+								;
+							hasDone = true;
+							win = true;
+							System.out.println("Sacaste un " + dado);
+							System.out.println("You win");
+							break;
+
+						}
 					}
+
 				}
-				
-				
+
 			}
-				
-				
-				
-			
-				
-				
-				
-				}
-				break;
-			}
+			break;
 		}
 	}
+}
