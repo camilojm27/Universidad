@@ -1,11 +1,11 @@
 *.gitignore
-*.class
-*.o
 *.mp4
 .directory
 Tabulado\ 2018-II-Adiciones.pdf 
 Tabulado\ 2018-II.pdf
-
+#------------C/C++ OutPuts-------------
+*.o
+*.out
 # Visual Studio and Visul Studio Code (Files) 
 *.vcxproj
 *.sln
@@ -21,3 +21,5 @@ debug*
 #----------Eclipse Files---------------
 *.classpath
 *.project
+#---------Java Outputs--------------
+*.class
