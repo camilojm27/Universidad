@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="craps.Principal" project="Craps" file="/Craps/src/craps/Principal.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="279" y="414"/>    
+    <position height="-1" width="-1" x="284" y="408"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -38,7 +38,7 @@
     </display>  
   </class>  
   <class id="5" language="java" name="java.util.Scanner" project="Craps" 
-    file="C:/Program Files/Java/jre-9.0.1/lib/jrt-fs.jar" binary="true" corner="BOTTOM_RIGHT">    
+    file="C:/Program Files/Java/jre1.8.0_201/lib/rt.jar" binary="true" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="164" y="76"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -47,37 +47,55 @@
     </display>  
   </class>  
   <association id="6">    
+    <bendpoint x="666" y="205"/>    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="7" name="dado2"/>      
-      <multiplicity id="8" minimum="0" maximum="1"/>    
+      <attribute id="7" name="dado2">        
+        <position height="18" width="38" x="662" y="184"/>      
+      </attribute>      
+      <multiplicity id="8" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="9">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="3"/>  
-  </dependency>  
-  <association id="10">    
+  <association id="9">    
     <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="11" name="craps"/>      
-      <multiplicity id="12" minimum="0" maximum="1"/>    
+      <attribute id="10" name="craps">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="11" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <dependency id="12">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
   <association id="13">    
+    <bendpoint x="660" y="261"/>    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="14" name="dado1"/>      
-      <multiplicity id="15" minimum="0" maximum="1"/>    
+      <attribute id="14" name="dado1">        
+        <position height="18" width="38" x="654" y="236"/>      
+      </attribute>      
+      <multiplicity id="15" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="16">    
     <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="17" name="entradaEscaner"/>      
-      <multiplicity id="18" minimum="0" maximum="1"/>    
+      <attribute id="17" name="entradaEscaner">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="18" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
